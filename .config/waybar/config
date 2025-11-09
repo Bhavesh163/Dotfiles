@@ -24,11 +24,13 @@
         "tooltip": false
     },
     
-    "custom/date": {
-        "format": " {:%a, %d %b}",
-        "interval": 30
+    "clock": {
+      "format": "🕒 {:%H:%M}  {:%a, %d %b}",
+      "format-alt": "⏰ {:%H:%M:%S}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "interval": 1
     },
-    
+
     "custom/weather": {
         "format": "{}",
         "tooltip": true,
