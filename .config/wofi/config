@@ -1,0 +1,131 @@
+/* Wofi Configuration */
+window {
+    transparency = "real";
+    location = center;
+    anchor = center;
+    width = 600;
+    x = -300;
+    y = -300;
+}
+
+mainbox {
+    spacing: 12px;
+    children: [inputbar, listbox];
+}
+
+inputbar {
+    spacing: 12px;
+    children: [prompt, entry];
+}
+
+prompt {
+    enabled: true;
+}
+
+entry {
+    placeholder = "Search apps...";
+    placeholder-color = #585b70;
+}
+
+listbox {
+    spacing: 8px;
+    dynamic = true;
+    scrollbar = true;
+}
+
+element {
+    padding: 8px 16px;
+    spacing: 16px;
+    border-radius: 8px;
+}
+
+element selected {
+    background-color: #cba6f7;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+
+element-icon {
+    size: 24px;
+}
+
+/* Colors */
+* {
+    background-color: rgba(30, 30, 46, 0.95);
+    border-color: #cba6f7;
+    text-color: #cdd6f4;
+    selected-text-color: #1e1e2e;
+    placeholder-color: #585b70;
+}
+
+/* Scrollbar */
+scrollbar {
+    handle-color: #cba6f7;
+    handle-width: 4px;
+    border-radius: 2px;
+}
+
+#window {
+    border: 2px solid;
+    border-color: #cba6f7;
+    border-radius: 16px;
+    padding: 16px;
+    background: rgba(30, 30, 46, 0.95);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+#input {
+    padding: 12px;
+    border: 1px solid #585b70;
+    border-radius: 8px;
+    background: rgba(88, 91, 112, 0.3);
+    font-size: 16px;
+}
+
+#input:focus {
+    border-color: #cba6f7;
+}
+
+#inner-box {
+    padding: 8px;
+}
+
+#outer-box {
+    margin: 8px;
+}
+
+#scroll {
+    margin: 4px;
+}
+
+#entry {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 2px 0px;
+}
+
+#entry:selected {
+    background: linear-gradient(45deg, #cba6f7, #f5c2e7);
+    border: none;
+}
+
+#entry > box {
+    margin-left: 8px;
+}
+
+#entry image {
+    padding-right: 12px;
+}
+
+#text {
+    font-family: "Comic Shanns Mono Nerd Font";
+    font-size: 14px;
+}
+
+#text:selected {
+    color: #1e1e2e;
+    font-weight: bold;
+}
