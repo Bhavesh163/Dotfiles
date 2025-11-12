@@ -1,3 +1,5 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/.local/share/amazon-q/shell/zprofile.pre.zsh" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/zprofile.pre.zsh"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
@@ -61,3 +63,6 @@ export PATH=$PATH:$(go env GOPATH)/bin
 # The original version is saved in .zprofile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
 export PATH
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/.local/share/amazon-q/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/zprofile.post.zsh"
