@@ -1,0 +1,93 @@
+# Core settings
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$python\
+$cmd_duration\
+$line_break\
+$character"""
+
+# Right prompt (clean and minimal)
+right_format = "$time"
+
+# Disable package version module (often noisy)
+[package]
+disabled = true
+
+# Username and hostname
+[username]
+style_user = "bold blue"
+style_root = "bold red"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "@[$hostname]($style) "
+style = "bold dimmed blue"
+trim_at = ".local"
+
+# Directory - clean without "in"
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+style = "bold cyan"
+format = "[$path]($style) "  # Removed "in " from here
+
+# Git branch - essential git info
+[git_branch]
+format = "on [$symbol$branch]($style) "
+style = "bold green"
+symbol = " "
+
+# Git status - only show when relevant
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+style = "bold yellow"
+conflicted = "═"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?"
+stashed = "$"
+modified = "!"
+deleted = "✘"
+
+# Node.js version
+[nodejs]
+format = "via [🟢 $version](bold green) "
+detect_extensions = ["js", "mjs", "cjs", "ts", "mts", "cts"]
+detect_files = ["package.json", ".node-version", ".nvmrc"]
+detect_folders = ["node_modules"]
+
+# Python version
+[python]
+format = "via [🐍 $version](bold yellow) "
+python_binary = ["python", "python3", "py"]
+detect_extensions = ["py"]
+detect_files = [".python-version", "Pipfile", "pyproject.toml", "requirements.txt"]
+detect_folders = []
+
+# Command duration
+[cmd_duration]
+format = "[$duration]($style) "
+style = "bold dimmed purple"
+min_time = 5000
+
+# Time
+[time]
+format = "[$time]($style)"
+style = "bold dimmed white"
+time_format = "%H:%M"
+disabled = false
+
+# Character (prompt symbol)
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold purple)"

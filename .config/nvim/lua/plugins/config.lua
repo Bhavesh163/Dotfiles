@@ -1,0 +1,11 @@
+-- Load plugin configurations after a short delay
+vim.defer_fn(function()
+  require('plugins.configs.lsp')
+  require('plugins.mini')
+  require('plugins.configs.which-key')
+  require('plugins.configs.telescope')
+  require('plugins.configs.treesitter')
+  require('plugins.configs.cmp')
+  require('plugins.configs.gitsigns')
+  require('plugins.configs.dap')
+end, 100)
