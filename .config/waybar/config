@@ -18,19 +18,19 @@
         "on-click": "wofi --show drun",
         "on-right-click": "pkill wofi"
     },
+
+    "custom/power": {
+    "format": "⏻",
+    "on-click": "wlogout --protocol layer-shell",
+    "on-right-click": "systemctl suspend",
+    "tooltip": "Left click: Power menu\nRight click: Suspend"
+    },
     
     "custom/separator": {
         "format": "┃",
         "tooltip": false
     },
     
-    "clock": {
-      "format": "🕒 {:%H:%M}  {:%a, %d %b}",
-      "format-alt": "⏰ {:%H:%M:%S}",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "interval": 1
-    },
-
     "custom/weather": {
         "format": "{}",
         "tooltip": true,
@@ -38,10 +38,10 @@
         "exec": "curl -s 'wttr.in/?format=%c+%t+%w' | sed 's/+//g'",
         "on-click": "xdg-open 'https://wttr.in'"
     },
-    
+
     "custom/power": {
         "format": "⏻",
-        "on-click": "wlogout",
+        "on-click": "config/waybar/scripts/powermenu.sh",
         "tooltip": false
     },
     
