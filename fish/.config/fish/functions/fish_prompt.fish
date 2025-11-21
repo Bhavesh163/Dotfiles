@@ -31,7 +31,8 @@ function fish_prompt
         echo -n " $branch"
         
         # Untracked files
-        if test -n "(git ls-files --others --exclude-standard 2>/dev/null)"
+        set -l untracked (git ls-files --others --exclude-standard 2>/dev/null)
+        if test -n "$untracked"
             set_color brred
             echo -n " +"
         end
