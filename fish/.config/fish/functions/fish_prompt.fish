@@ -22,13 +22,20 @@ function fish_prompt
     set_color brmagenta
     echo -n "]"
     
-    # Git branch
+    # Git branch and status
     if git rev-parse --git-dir >/dev/null 2>&1
         set -l branch (git branch 2>/dev/null | sed -n '/\* /s///p')
         set_color brmagenta
         echo -n "─["
         set_color brgreen
         echo -n " $branch"
+        
+        # Git status indicators
+        if not git diff-index --quiet HEAD 2>/dev/null
+            set_color bryellow
+            echo -n " ●"
+        end
+        
         set_color brmagenta
         echo -n "]"
     end

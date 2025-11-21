@@ -1,180 +1,80 @@
 * {
     border: none;
-    border-radius: 12px;
-    font-family: "Comic Shanns Mono Nerd Font", "Noto Color Emoji";
-    font-size: 14px;
-    font-weight: bold;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    font-weight: 500;
     min-height: 0;
 }
 
 window#waybar {
-    background: linear-gradient(135deg, 
-        rgba(30, 30, 46, 0.95) 0%,
-        rgba(49, 50, 68, 0.95) 50%,
-        rgba(30, 30, 46, 0.95) 100%);
-    color: #cdd6f4;
-    border: 2px solid transparent;
-    border-image: linear-gradient(45deg, 
-        #ff6b6b, #ffa500, #ffff00, #00ff00, 
-        #00ffff, #0000ff, #ff00ff, #ff6b6b) 1;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
-    backdrop-filter: blur(16px);
-}
-
-/* Workspaces */
-#workspaces button {
-    padding: 0 12px;
-    margin: 0 2px;
-    background: rgba(88, 91, 112, 0.3);
-    color: #585b70;
-    border: 1px solid rgba(203, 166, 247, 0.1);
+    background: #1a1b26;
+    color: #c0caf5;
     border-radius: 8px;
-    transition: all 0.3s ease;
 }
 
-#workspaces button.focused {
-    background: linear-gradient(45deg, #cba6f7, #f5c2e7);
-    color: #1e1e2e;
-    border: 1px solid #cba6f7;
-    box-shadow: 0 0 12px rgba(203, 166, 247, 0.6);
-    transform: scale(1.05);
+#workspaces button {
+    padding: 0 8px;
+    margin: 0 2px;
+    background: transparent;
+    color: #565f89;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active {
+    color: #7aa2f7;
+    border-bottom: 2px solid #7aa2f7;
 }
 
 #workspaces button:hover {
-    background: rgba(203, 166, 247, 0.2);
-    color: #cba6f7;
-    border: 1px solid rgba(203, 166, 247, 0.4);
+    color: #7aa2f7;
 }
 
-#workspaces button.urgent {
-    background: linear-gradient(45deg, #f38ba8, #fab387);
-    color: #1e1e2e;
-    animation: pulse 2s infinite;
-}
-
-/* Custom modules */
-#custom-launcher {
-    padding: 0 16px;
-    margin: 0 8px;
-    background: linear-gradient(135deg, #ff6b6b, #cba6f7);
-    color: #1e1e2e;
-    border-radius: 10px;
-    font-size: 16px;
-    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
-}
-
-#custom-separator {
-    color: #585b70;
-    font-size: 16px;
-    margin: 0 4px;
-}
-
-#custom-date {
+#window {
     padding: 0 12px;
-    background: rgba(116, 199, 236, 0.2);
-    color: #74c7ec;
-    border-radius: 8px;
-    margin: 0 4px;
+    color: #a9b1d6;
 }
 
-#custom-weather {
-    padding: 0 12px;
-    background: rgba(166, 227, 161, 0.2);
-    color: #a6e3a1;
-    border-radius: 8px;
-    margin: 0 4px;
-}
-
-#custom-power {
-    padding: 0 16px;
-    margin: 0 8px;
-    background: linear-gradient(135deg, #f38ba8, #fab387);
-    color: #1e1e2e;
-    border-radius: 10px;
-    font-size: 16px;
-    box-shadow: 0 4px 12px rgba(243, 139, 168, 0.4);
-}
-
-/* System modules */
 #clock {
-    padding: 0 16px;
-    background: linear-gradient(135deg, #cba6f7, #f5c2e7);
-    color: #1e1e2e;
-    border-radius: 10px;
-    font-weight: 900;
-    margin: 0 8px;
-    box-shadow: 0 4px 12px rgba(203, 166, 247, 0.4);
+    padding: 0 12px;
+    color: #7aa2f7;
+    font-weight: 600;
 }
 
-#cpu, #memory, #disk, #pulseaudio, #network, #battery {
-    padding: 0 14px;
-    margin: 0 4px;
-    background: rgba(88, 91, 112, 0.4);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-#cpu:hover, #memory:hover, #disk:hover, #pulseaudio:hover, #network:hover, #battery:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+#cpu, #memory, #pulseaudio, #network, #battery {
+    padding: 0 10px;
+    color: #9ece6a;
 }
 
 #cpu {
-    color: #ff6b6b;
+    color: #bb9af7;
 }
 
 #memory {
-    color: #ffa500;
-}
-
-#disk {
-    color: #ffff00;
+    color: #7dcfff;
 }
 
 #pulseaudio {
-    color: #00ff00;
+    color: #9ece6a;
 }
 
 #network {
-    color: #00ffff;
+    color: #7aa2f7;
+}
+
+#network.disconnected {
+    color: #f7768e;
 }
 
 #battery {
-    color: #cba6f7;
+    color: #e0af68;
 }
 
 #battery.warning {
-    color: #ffa500;
-    animation: glow 1.5s ease-in-out infinite alternate;
+    color: #ff9e64;
 }
 
 #battery.critical {
-    color: #ff6b6b;
-    animation: blink 0.8s linear infinite;
+    color: #f7768e;
 }
 
-/* Animations */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
 
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0.3; }
-}
-
-@keyframes glow {
-    from { box-shadow: 0 0 5px #ffa500; }
-    to { box-shadow: 0 0 20px #ffa500; }
-}
-
-/* Tray */
-#tray {
-    padding: 0 12px;
-    background: rgba(88, 91, 112, 0.4);
-    border-radius: 8px;
-    margin: 0 4px;
-}

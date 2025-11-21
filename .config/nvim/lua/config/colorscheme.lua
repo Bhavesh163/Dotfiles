@@ -2,7 +2,7 @@
 local cyberdream_ok, cyberdream = pcall(require, 'cyberdream')
 if cyberdream_ok then
   cyberdream.setup({
-    transparent = false,
+    transparent = true,
     italic_comments = true,
     hide_fillchars = true,
     borderless_telescope = true,
