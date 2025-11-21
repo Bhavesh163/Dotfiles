@@ -30,10 +30,26 @@ function fish_prompt
         set_color brgreen
         echo -n " $branch"
         
-        # Git status indicators
-        if not git diff-index --quiet HEAD 2>/dev/null
+        # Untracked files
+        if test -n "(git ls-files --others --exclude-standard 2>/dev/null)"
+            set_color brred
+            echo -n " +"
+        end
+        
+        # Uncommitted changes (modified or staged)
+        if not git diff --quiet 2>/dev/null; or not git diff --cached --quiet 2>/dev/null
             set_color bryellow
             echo -n " ●"
+        end
+        
+        # Unpushed commits (only if tracking a remote branch)
+        set -l upstream (git rev-parse --abbrev-ref @{u} 2>/dev/null)
+        if test -n "$upstream"
+            set -l unpushed (git log @{u}.. --oneline 2>/dev/null | wc -l)
+            if test $unpushed -gt 0
+                set_color brcyan
+                echo -n " ↑"
+            end
         end
         
         set_color brmagenta
