@@ -1,71 +1,27 @@
 {
     "layer": "top",
-    "position": "top",
-    "height": 32,
-    "spacing": 6,
-    "margin-top": 6,
-    "margin-left": 12,
-    "margin-right": 12,
-    
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["cpu", "memory", "pulseaudio", "network", "battery"],
-    
-    "hyprland/workspaces": {
-        "format": "{id}",
-        "on-click": "activate",
-        "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": []
-        }
-    },
-    
-    "hyprland/window": {
-        "format": "{}",
-        "max-length": 60,
-        "separate-outputs": true
-    },
-    
-    "clock": {
-        "format": "{:%H:%M}",
-        "format-alt": "{:%a %d %b}",
-        "tooltip-format": "<tt>{calendar}</tt>"
-    },
-    
-    "cpu": {
-        "format": "CPU {usage}%",
-        "interval": 2
-    },
-    
-    "memory": {
-        "format": "RAM {percentage}%",
-        "interval": 2
-    },
-    
-    "pulseaudio": {
-        "format": "VOL {volume}%",
-        "format-muted": "MUTE",
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+",
-        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
-    },
-    
-    "network": {
-        "format-wifi": "NET {signalStrength}%",
-        "format-ethernet": "ETH",
-        "format-disconnected": "OFFLINE",
-        "tooltip-format": "{essid}\n{ipaddr}"
-    },
-    
-    "battery": {
-        "format": "BAT {capacity}%",
-        "format-charging": "CHG {capacity}%",
-        "states": {
-            "warning": 30,
-            "critical": 15
-        }
-    }
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,    
+    "spacing": 0,
+    "height": 40,
+
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],    
+    "modules-left": [
+        "custom/appmenu",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "battery",
+        "clock",
+        "custom/exit"
+    ]
 }
