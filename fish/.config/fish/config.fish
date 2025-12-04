@@ -13,6 +13,7 @@ end
 alias ls='eza --color=always --icons --group-directories-first'
 alias lt='eza --tree --color=always --icons --group-directories-first'
 alias q='kiro-cli'
+alias v='nvim'
 
 # Syntax highlighting colors
 set -g fish_color_normal brwhite
