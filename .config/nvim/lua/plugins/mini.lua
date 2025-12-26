@@ -64,12 +64,3 @@ require('mini.splitjoin').setup()
 
 -- Trailspace
 require('mini.trailspace').setup()
-
--- Keymaps for mini.files
-vim.keymap.set('n', '<leader>e', function()
-  require('mini.files').open()
-end, { desc = 'Open file explorer' })
-
-vim.keymap.set('n', '<leader>E', function()
-  require('mini.files').open(vim.api.nvim_buf_get_name(0))
-end, { desc = 'Open file explorer at current file' })

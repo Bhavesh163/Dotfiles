@@ -17,8 +17,8 @@ packer.startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- Cyberdream color scheme
-  use 'scottmckendry/cyberdream.nvim'
+  -- Tokyonight color scheme
+  use 'folke/tokyonight.nvim'
 
   -- Mini.nvim collection
   use 'echasnovski/mini.nvim'
@@ -65,6 +65,23 @@ packer.startup(function(use)
 
   -- Lazygit integration
   use 'kdheepak/lazygit.nvim'
+
+  -- Status line
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
+  -- File explorer
+  use {
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v3.x',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons',
+      'MunifTanjim/nui.nvim',
+    }
+  }
 
   -- Debugger
   use 'mfussenegger/nvim-dap'
