@@ -1,3 +1,11 @@
+# Completion system
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+setopt COMPLETE_IN_WORD
+setopt AUTO_MENU
+
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -11,7 +19,10 @@ fi
 alias ls='eza --color=always --icons --group-directories-first'
 alias lt='eza --tree --color=always --icons --group-directories-first'
 alias q='kiro-cli'
-alias v='nvim'
+alias v='vim'
+
+export EDITOR="vim"
+export VISUAL="$EDITOR"
 
 # Autosuggestions
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
