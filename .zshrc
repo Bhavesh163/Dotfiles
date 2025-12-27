@@ -16,13 +16,14 @@ if [ -d "$HOME/.nvm" ]; then
 fi
 
 # Aliases
-alias ls='eza --color=always --icons --group-directories-first'
+alias l='eza --color=always --icons --group-directories-first'
 alias lt='eza --tree --color=always --icons --group-directories-first'
 alias q='kiro-cli'
-alias v='vim'
+alias v='nvim'
+alias ghostty-config='nvim ~/.config/ghostty/config'
 alias t='tmux'
 
-export EDITOR="vim"
+export EDITOR="nvim"
 export VISUAL="$EDITOR"
 
 # Autosuggestions
@@ -57,3 +58,4 @@ ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=cyan,bold'
 
 # Oh My Posh prompt
 eval "$(oh-my-posh init zsh --config /home/ballhog/.cache/oh-my-posh/themes/gruvbox.omp.json)"
+export PATH="$HOME/.local/bin:$PATH"
