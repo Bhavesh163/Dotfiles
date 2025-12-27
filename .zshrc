@@ -23,6 +23,10 @@ alias q='kiro-cli'
 alias v='nvim'
 alias ghostty-config='nvim ~/.config/ghostty/config'
 alias t='tmux'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gp='git push'
+
 
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
