@@ -20,6 +20,7 @@ alias ls='eza --color=always --icons --group-directories-first'
 alias lt='eza --tree --color=always --icons --group-directories-first'
 alias q='kiro-cli'
 alias v='vim'
+alias t='tmux'
 
 export EDITOR="vim"
 export VISUAL="$EDITOR"
