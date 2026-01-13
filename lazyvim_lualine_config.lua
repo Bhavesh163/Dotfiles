@@ -1,0 +1,1 @@
+.config/nvim/lazyvim_lualine_config.lua
